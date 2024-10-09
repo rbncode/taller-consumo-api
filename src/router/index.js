@@ -22,6 +22,16 @@ const router = createRouter({
       name: "country-list",
       component: () => import("../views/CountryList.vue"),
     },
+    {
+      path: "/anime-list",
+      name: "anime-list",
+      component: () => import("../views/AnimeView.vue"),
+    },
+    {
+      path: "/anime-rec",
+      name: "anime-rec",
+      component: () => import("../views/AnimeRecView.vue"),
+    },
   ],
 });
 
