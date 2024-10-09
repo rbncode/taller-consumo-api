@@ -4,8 +4,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      code: null,
-      country: null,
+      countries: [],
+      error: null,
     };
   },
   mounted() {
@@ -17,9 +17,13 @@ export default {
         const response = await axios.get(
           "https://countriesnow.space/api/v0.1/countries/population"
         );
-        const data = response.data;
-        this.code = data.code;
-        this.country = data.country;
+        this.countries = response.data.data.map((country) => {
+          return {
+            name: country.country,
+            code: country.country.substring(0, 3).toUpperCase(), // Using the first 3 letters of the country name as the code
+          };
+        });
+        this.loading = false;
       } catch (error) {
         console.error("Error fetching data", error);
       }
@@ -28,12 +32,7 @@ export default {
 };
 </script>
 
-<template>
-  <div id="info">
-    <p>Code: {{ code }}</p>
-    <p>Country: {{ country }}</p>
-  </div>
-</template>
+<template></template>
 
 <style scoped>
 h1 {
