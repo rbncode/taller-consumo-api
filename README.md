@@ -1,29 +1,10 @@
 # taller-consumo-api
 
-This template should help get you started developing with Vue 3 in Vite.
+Se realiza una aplicación en VUE para ejecutar consumo de API con las siguientes APIs disponibles:
 
-## Recommended IDE Setup
+- https://countriesnow.space/api/v0.1/countries/population
+- https://api.jikan.moe/v4/recommendations/anime
+- https://api.jikan.moe/v4/random/anime
+- https://api.jikan.moe/v4/random/manga
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Se logra realizar esto a través de componentes que se dedican a recibir la información de las APIs con diferentes vistas dedicadas para cada uno. En el caso de la vista de países, este muestra el nombre del país junto al código de este. A comparación de este, las otras APIs muestran un título consumido de este.
