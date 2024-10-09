@@ -3,7 +3,7 @@ import FetchManga from "@/components/FetchManga.vue";
 </script>
 
 <template>
-  <FetchManga msg="hi" />
+  <FetchManga />
 </template>
 
 <style>
