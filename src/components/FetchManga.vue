@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      countries: [],
+      mangas: [],
       error: null,
     };
   },
@@ -15,14 +15,10 @@ export default {
     async fetchData() {
       try {
         const response = await axios.get(
-          "https://countriesnow.space/api/v0.1/countries/population"
+          "https://api.jikan.moe/v4/random/manga"
         );
-        this.countries = response.data.data.map((country) => {
-          return {
-            name: country.country,
-            code: country.country.substring(0, 3).toUpperCase(), // Using the first 3 letters of the country name as the code
-          };
-        });
+        this.mangas = [manga.data.data];
+
         this.loading = false;
       } catch (error) {
         console.error("Error fetching data", error);
@@ -34,12 +30,12 @@ export default {
 
 <template>
   <div>
-    <h1>Country Names and Codes</h1>
+    <h1>Mangas</h1>
     <div v-if="error" class="error">{{ error }}</div>
     <div v-else>
       <ul>
-        <li v-for="country in countries" :key="country.code">
-          Name: {{ country.name }}, Code: {{ country.code }}
+        <li v-for="manga in mangas" :key="manga.mal_id">
+          Title: {{ manga.title }}, Chapters: {{ manga.chapters }}
         </li>
       </ul>
     </div>

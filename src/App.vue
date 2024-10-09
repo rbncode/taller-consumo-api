@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/FetchCountry.vue";
 </script>
 
 <template>
@@ -14,11 +13,12 @@ import HelloWorld from "./components/FetchCountry.vue";
     />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/about">Manga List</RouterLink>
+        <RouterLink to="/anime-list">Anime List</RouterLink>
+        <RouterLink to="/anime-rec">Anime Recommendation</RouterLink>
+        <RouterLink to="/country-list">Countries</RouterLink>
       </nav>
     </div>
   </header>
